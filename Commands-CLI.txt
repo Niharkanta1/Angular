@@ -1,0 +1,6 @@
+npm install -g @angular/cli
+ng new my-first-app
+cd my-first-app
+ng serve
+
+npm install --save bootstrap@3

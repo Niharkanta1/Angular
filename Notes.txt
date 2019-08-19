@@ -1,0 +1,15 @@
+Output data:
+[property] = data --- property binding
+{{data}} ----- String interpolation
+
+React to user-events:
+(event) = "expressions"
+
+2 Way Bindings: combination of both
+[(ngModel)] ="data"
+
+[] - property binding
+() - event binding
+
+
+
