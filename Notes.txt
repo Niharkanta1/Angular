@@ -11,5 +11,7 @@ React to user-events:
 [] - property binding
 () - event binding
 
-
+Directives : are the instructions to DOM
+Structural Directives - *ngif
+Attribute Directives - *ngStyle
 

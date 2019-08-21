@@ -11,6 +11,9 @@ export class AppComponent {
   resetUserBtnStatus = 'false';
   showDetails = false;
   clicks = [];
+
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
   resetUserName() {
     this.username = '';
     this.resetUserBtnStatus = 'true';
@@ -29,11 +32,17 @@ export class AppComponent {
   }
 
   getColor() {
-    if(this.clicks.length >= 5){
+    if (this.clicks.length >= 5) {
       return 'blue';
-    }
-    else{
+    } else {
       return 'green';
+    }
+  }
+  onIntervalFired(firedNumber: number) {
+    if (firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
     }
   }
 
