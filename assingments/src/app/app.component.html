@@ -1,41 +1,43 @@
 <div class="row">
-  <app-header></app-header>
+  <app-header (tabSelectedNum)="selectedTab($event)"></app-header>
 </div>
 <div class="container">
-  <h1>Assignment -1 </h1>
+  <div class="row" *ngIf="selectedTabStr==='a1'">
+  <h1>Assignment -1</h1>
   <hr>
   <app-warning-alert></app-warning-alert>
   <app-success-alert></app-success-alert>
-
+  </div>
+  <div class="row" *ngIf="selectedTabStr==='a2'">
   <h1>Assignment - 2</h1>
   <hr>
-  
   <label for="username">User Name:</label>
   <input type="text" name="username" class="form-control" [(ngModel)]="username"><br>
   <p>Hello {{ username }}</p>
   <button class="btn btn-primary" [disabled]="checkUserBtnStatus()" (click)="resetUserName()">Reset User</button>
-
+  </div>
+  <div class="row" *ngIf="selectedTabStr==='a3'">
   <h1>Assignment - 3</h1>
   <hr>
   <button class="btn btn-primary" (click)="toggleDetails()" >Display details</button>
   <p *ngIf="showDetails">This is a paragraph</p>
   <p *ngFor="let click of clicks" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{'afterFive': clicks.length >= 5}">{{ click }}</p>
-
-  <h1>Assignment - 4</h1>
-  <hr>
-  <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
-  <div>
-  &nbsp;
-  <div class="row">
-    <div class="col-sm-6">
-        <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-    </div>
-    <div class="col-sm-6">
-        <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+  </div>
+  <div class="row" *ngIf="selectedTabStr==='a4'">
+    <h1>Assignment - 4</h1>
+    <hr>
+    <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+          <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      </div>
+      <div class="col-sm-6">
+          <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+      </div>
     </div>
   </div>
 </div>
-
 <div class="row">
   <app-footer></app-footer>
 </div>

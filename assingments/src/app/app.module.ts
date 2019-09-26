@@ -20,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     OddComponent,
     EvenComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

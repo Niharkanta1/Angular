@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  tabNumSelected = 1;
+  selectedTabStr = 'a1';
   title = 'assingments';
   username = '';
   resetUserBtnStatus = 'false';
@@ -44,6 +46,10 @@ export class AppComponent {
     } else {
       this.oddNumbers.push(firedNumber);
     }
+  }
+
+  selectedTab(anumber: number) {
+    this.selectedTabStr = 'a' + anumber;
   }
 
 }
